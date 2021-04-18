@@ -30,12 +30,12 @@ namespace CLRTest {
 			this->dataGridView1->AutoGenerateColumns = false;
 			auto textColumn1 = gcnew DataGridViewTextBoxColumn();
 			textColumn1->DataPropertyName = L"Name";
-			textColumn1->Name = L"Name";
+			textColumn1->Name = L"peopleName";
 			textColumn1->HeaderText = L"–¼‘O";
 			this->dataGridView1->Columns->Add(textColumn1);
 			auto textColumn2 = gcnew DataGridViewTextBoxColumn();
 			textColumn2->DataPropertyName = L"Age";
-			textColumn2->Name = L"Age";
+			textColumn2->Name = L"peopleAge";
 			textColumn2->HeaderText = L"”N—î";
 			textColumn2->ReadOnly = true;
 			this->dataGridView1->Columns->Add(textColumn2);
