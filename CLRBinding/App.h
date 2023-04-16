@@ -18,8 +18,9 @@ namespace CLRTest
 			Application::EnableVisualStyles();
 			Application::SetCompatibleTextRenderingDefault(false);
 
-			MyForm form;
-			Application::Run(% form);
+			MyForm^ form = gcnew MyForm();
+			Application::Run(form);
+			delete form;
 		}
 	};
 }

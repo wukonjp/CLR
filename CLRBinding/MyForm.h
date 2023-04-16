@@ -1,5 +1,7 @@
 #pragma once
 
+#include "MyForm2.h"
+
 namespace CLRTest {
 
 	using namespace System;
@@ -60,6 +62,7 @@ namespace CLRTest {
 	private: System::Windows::Forms::BindingSource^ bindingSource1;
 	private: System::Windows::Forms::ComboBox^ comboBox1;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	private: System::Windows::Forms::Button^ button2;
 
 
 
@@ -87,6 +90,7 @@ namespace CLRTest {
 			this->bindingSource1 = (gcnew System::Windows::Forms::BindingSource(this->components));
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->button2 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingSource1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
@@ -135,11 +139,22 @@ namespace CLRTest {
 			this->dataGridView1->Size = System::Drawing::Size(326, 197);
 			this->dataGridView1->TabIndex = 4;
 			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(79, 216);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(75, 23);
+			this->button2->TabIndex = 5;
+			this->button2->Text = L"button2";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 12);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(609, 261);
+			this->Controls->Add(this->button2);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->comboBox1);
 			this->Controls->Add(this->button1);
@@ -173,6 +188,13 @@ namespace CLRTest {
 			}
 
 			model->People->Add(gcnew Person(L"‚X‚X‚X‚X‚X", 99));
+		}
+
+		private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) 
+		{
+			MyForm2^ form = gcnew MyForm2();
+			form->ShowDialog();
+			delete form;
 		}
 	};
 }
